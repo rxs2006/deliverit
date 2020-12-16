@@ -32,7 +32,7 @@ Url para acesso a documentação da api:<br />
 
 ## Imagem no DockerHub
 
-docker pull anagu/anagu:deliverit-v1.0
+docker pull anagu/anagu:deliverit-v1.1
 <br /><br />
 
 ## Agradecimento
