@@ -3,24 +3,20 @@ package br.com.deliver.it.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.deliver.it.model.MultaPorAtraso;
 import br.com.deliver.it.service.MultaPorAtrasoService;
 
+@RestController
+@RequestMapping("/multas-por-atraso")
 public class MultaPorAtrasoController {
 	@Autowired
 	private MultaPorAtrasoService multaPorAtrasoService;
-	
-	@GetMapping("/")
-	public List<MultaPorAtraso> findAll()
-	{
-		return multaPorAtrasoService.findAll();
-	}
 	
 	@PostMapping("/")
 	public MultaPorAtraso salvar(@RequestBody MultaPorAtraso multaPorAtraso)
@@ -28,9 +24,9 @@ public class MultaPorAtrasoController {
 		return multaPorAtrasoService.salvar(multaPorAtraso);
 	}	
 	
-	@DeleteMapping("/{id}")
-	public void excluir(@PathVariable Integer id)
+	@GetMapping("/")
+	public List<MultaPorAtraso> selecionarTodos()
 	{
-		multaPorAtrasoService.excluir(id);
-	}	
+		return multaPorAtrasoService.findAll();
+	}		
 }

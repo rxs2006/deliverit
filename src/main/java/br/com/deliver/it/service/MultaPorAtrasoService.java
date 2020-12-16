@@ -13,18 +13,13 @@ public class MultaPorAtrasoService {
 	@Autowired
 	private MultaPorAtrasoRepository multaPorAtrasoRepository;
 	
-	public List<MultaPorAtraso> findAll()
-	{
-		return multaPorAtrasoRepository.findAll();
-	}
-	
 	public MultaPorAtraso salvar(MultaPorAtraso multaPorAtraso)
 	{
 		return multaPorAtrasoRepository.save(multaPorAtraso);
 	}
 	
-	public void excluir(Integer id)
+	public List<MultaPorAtraso> findAll()
 	{
-		multaPorAtrasoRepository.delete(new MultaPorAtraso(id));
+		return multaPorAtrasoRepository.findAll();
 	}	
 }
