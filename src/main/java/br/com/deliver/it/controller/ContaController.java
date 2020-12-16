@@ -4,12 +4,15 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Description;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,9 +56,19 @@ public class ContaController {
 	
 	@PostMapping("/")
 	@ApiOperation("Salva uma conta a pagar")
-	public Conta salvar(@RequestBody Conta conta)
+	public ResponseEntity<Object> salvar(@RequestBody @Valid Conta conta, BindingResult result)
 	{
-		return contaService.salvar(conta);
+		StringBuilder mensagem = new StringBuilder();
+		if(result.hasErrors())
+		{
+			List<FieldError> erros = result.getFieldErrors();
+			for (FieldError erro : erros ) {
+				mensagem.append(erro.getDefaultMessage());
+			}
+			return new ResponseEntity<>(mensagem.toString(),HttpStatus.BAD_REQUEST);
+		}
+		
+		return new ResponseEntity<>(contaService.salvar(conta),HttpStatus.OK);	
 	}		
 	
 }
