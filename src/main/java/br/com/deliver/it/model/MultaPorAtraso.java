@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class MultaPorAtraso {
 	@Id
 	@Column(name = "diasematraso")
-	private Integer diasEmAtraso;
+	private Long diasEmAtraso;
 	private BigDecimal multa;
 	private BigDecimal juros;	
 }

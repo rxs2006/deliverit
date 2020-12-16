@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +24,9 @@ import lombok.NoArgsConstructor;
 public class Conta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(hidden=true)
 	private int id;	
+	private String nome;
 	private BigDecimal valorOriginal; 
 	private LocalDate dataDeVencimento;
 	private LocalDate dataDePagamento;

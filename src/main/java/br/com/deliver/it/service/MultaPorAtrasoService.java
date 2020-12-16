@@ -18,8 +18,14 @@ public class MultaPorAtrasoService {
 		return multaPorAtrasoRepository.save(multaPorAtraso);
 	}
 	
+	
 	public List<MultaPorAtraso> findAll()
 	{
 		return multaPorAtrasoRepository.findAll();
-	}	
+	}		
+	
+	public MultaPorAtraso selecionarParaCalculoValorAtualizado(Long diasDeAtraso)
+	{
+		return multaPorAtrasoRepository.selecionarParaCalculoValorAtualizado(diasDeAtraso);
+	}
 }

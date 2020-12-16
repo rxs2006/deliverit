@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.deliver.it.model.Conta;
 import br.com.deliver.it.repository.ContaRepository;
-import br.com.deliver.it.repository.MultaPorAtrasoRepository;
 
 @Service
 public class ContaService {
@@ -15,21 +14,13 @@ public class ContaService {
 	@Autowired
 	private ContaRepository contaRepository;
 	
-	@Autowired
-	private MultaPorAtrasoRepository multaRepository;	
-	
 	public List<Conta> findAll()
 	{
 		return contaRepository.findAll();
 	}
 	
 	public Conta salvar(Conta conta)
-	{
-		if(multaRepository.count() == 0)
-		{
-			
-		}
-		
+	{		
 		return contaRepository.save(conta);
 	}
 	
