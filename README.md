@@ -30,9 +30,10 @@ Url para acesso a documentação da api:<br />
 <a href="http://localhost:8090/swagger-ui/index.html">Documentação</a>
 <br /><br />
 
-## Imagem no DockerHub
+## Execução da api
 
-docker pull anagu/anagu:deliverit-v1.1
+Após realizar o download da aplicação no git, realize sua extração, acesse a pasta raiz da api pelo terminal/prompt/shell e execute o seguinte comandosudo docker-compose up --build --always-recreate-deps
+
 <br /><br />
 
 ## Agradecimento
