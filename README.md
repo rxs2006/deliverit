@@ -35,6 +35,8 @@ Url para acesso a documentação da api:<br />
 Após realizar o download da aplicação no git, realize sua extração, acesse a pasta raiz da api onde se encontra o arquivo: docker-compose.yml pelo terminal/prompt/shell e execute o seguinte comando:<br /><br /> docker-compose up --build --always-recreate-deps
 
 <br /><br />
+É importante lembrar que o docker deve está ativo na máquina em que o comando será executado
+<br /><br />
 
 ## Agradecimento
 
