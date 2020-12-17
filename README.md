@@ -32,7 +32,7 @@ Url para acesso a documentação da api:<br />
 
 ## Execução da api
 
-Após realizar o download da aplicação no git, realize sua extração, acesse a pasta raiz da api pelo terminal/prompt/shell e execute o seguinte comandosudo docker-compose up --build --always-recreate-deps
+Após realizar o download da aplicação no git, realize sua extração, acesse a pasta raiz da api pelo terminal/prompt/shell e execute o seguinte comando:<br /><br /> docker-compose up --build --always-recreate-deps
 
 <br /><br />
 
