@@ -19,9 +19,9 @@ Algumas das tecnologias utilizadas:
 <a href="https://swagger.io">Swagger</a><br />
 <a href="https://docker.io">Docker</a><br /><br /><br />
 
-## Testes Unitários
+## Testes Unitários/Integração
 
-Disponibilizei apenas para demonstração bastante simples na aplicação a realização de um teste unitário com o JUNIT porém o deixei comentado pois o banco de dados esta no container e se o container não estiver rodando e tentar rodar a aplicação pela IDE vai ocorrer falha na conexão durante o teste.
+Disponibilizei apenas para demonstração bastante simples na aplicação a realização de um teste de integração com o JUNIT porém o deixei comentado pois o banco de dados esta no container e se o container não estiver rodando e tentar rodar a aplicação pela IDE vai ocorrer falha na conexão durante o teste.
 
 ## Documentação da api com o swagger
 
@@ -32,7 +32,7 @@ Url para acesso a documentação da api:<br />
 
 ## Imagem no DockerHub
 
-docker pull anagu/anagu:deliverit-v1.0
+docker pull anagu/anagu:deliverit-v1.1
 <br /><br />
 
 ## Agradecimento
